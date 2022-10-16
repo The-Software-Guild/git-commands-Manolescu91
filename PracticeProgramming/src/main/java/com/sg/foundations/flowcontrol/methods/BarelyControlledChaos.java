@@ -11,17 +11,14 @@ public class BarelyControlledChaos {
 
     public static void main(String[] args) {
 
-        String color = randomColor(); // call color method here
-        ??? animal = ???; // call animal method again here
-        ??? colorAgain = ???; // call color method again here
-        ??? weight = ???; // call number method,
-            // with a range between 5 - 200
-        ??? distance = ???; // call number method,
-            // with a range between 10 - 20
-        ??? number = ???; // call number method,
-            // with a range between 10000 - 20000
-        ??? time = ???; // call number method,
-            // with a range between 2 - 6            
+        String color = getRandomColour();
+        String animal = getRandomAnimal();
+        String colorAgain = getRandomColour();
+        int weight = getRandomNumber(5, 200); 
+        int distance = getRandomNumber(10, 20); 
+        int number = getRandomNumber(10000, 20000);
+        int time = getRandomNumber(2, 6);
+               
 
         System.out.println("Once, when I was very small...");
 
@@ -37,10 +34,50 @@ public class BarelyControlledChaos {
             + "let me tell you!");
 
     }
-        public static String randomColor(){
-            Random random = new Random();
-            int x = random.nextInt();
+        // Method to return a randomly chosen color
+        public static String getRandomColour(){
+            Random rndCol = new Random();
+            int rnd = rndCol.nextInt(4) + 1;
+            switch(rnd) {
+                case 1:
+                    return "white";
+                case 2:
+                    return "black";
+                case 3:
+                    return "green";
+                case 4:
+                    return "blue";
+                case 5:
+                    return "pink";
             }
-
-    }
+            return null;
+        }
+        
+        // Method to return a randomly chosen animal
+        public static String getRandomAnimal(){
+            Random rndAnm = new Random();
+            int rnd = rndAnm.nextInt(4) + 1;
+            switch(rnd) {
+                case 1:
+                    return "coyote";
+                case 2:
+                    return "swan";
+                case 3:
+                    return "leopard";
+                case 4:
+                    return "cat";
+                case 5:
+                    return "horse";
+            }
+            return null;
+        }
+        
+        // Method to return a random integer with a range of min/max including
+        public static int getRandomNumber(int s, int e) {
+            Random rndNum = new Random();
+            int start = s;
+            int end = e;
+            int rnd = rndNum.nextInt((end + 1) - start) + 1;
+            return rnd;
+        }
 }
