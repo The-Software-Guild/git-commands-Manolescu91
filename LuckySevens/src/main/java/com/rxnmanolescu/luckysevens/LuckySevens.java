@@ -25,25 +25,30 @@ public class LuckySevens {
         
         Random randNum = new Random();
         
-        die1 = randNum.nextInt(6) + 1;
-        die2 = randNum.nextInt(6) + 1;
-        
+        // While loop that will run as long as the user still has money
         while (money >= 1) {
             rolls++;
             if(money > maxMoney) {
                 maxMoney = money;
                 maxRoll = rolls - 1;
             }
+            
+            // Generate random dice
             die1 = randNum.nextInt(6) + 1;
             die2 = randNum.nextInt(6) + 1;
             
+            // If the sum of the two dice is 7, the user wins $5
+            // else, the user loses $1
             if (die1 + die2 == 7) {
                 money += 4;
             } else {
                 money -= 1;
             }
         }
-        System.out.println("\nYou went broke after "+rolls + " rolls.");
-        System.out.println("\nYou should have quit after "+maxRoll+" rolls when you had $"+maxMoney);
+        
+        // Display statistics
+        System.out.println("\nYou are broke after " + rolls + " rolls.");
+        System.out.println("\nYou should have quit after " + maxRoll 
+                           + " rolls when you had $" + maxMoney);
     }
 }
