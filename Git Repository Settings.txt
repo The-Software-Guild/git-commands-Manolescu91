@@ -1,0 +1,32 @@
+GIT REPOSITORY SETTINGS
+
+# find .git/ folder
+ls -ah
+
+# get status
+git status
+
+# remove git folder
+rm -rf .git
+
+# check .git/ folder deleted
+ls -ah
+
+# choose git folder location
+cd "folder_location" (ie "D:/WIT/git_commands_Manolescu91")
+
+# check .git/ location matches your chosen folder
+ls -ah
+
+# add files to git
+git add .
+git status
+
+# commit files
+git commit -m "commit description"
+
+# push files
+git push
+
+
+

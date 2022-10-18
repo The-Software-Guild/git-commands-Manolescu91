@@ -5,9 +5,15 @@
  */
 package com.sg.foundations.flowcontrol.arrays;
 
-import java.util.Arrays;
-public class FruitSalad {
+/**
+ *
+ * @author Roxana Manolescu
+ */
 
+import java.util.Arrays;
+
+public class FruitSalad {
+    
     public static void main(String[] args) {
         String[] fruit = {"Kiwi Fruit", "Gala Apple", "Granny Smith Apple", 
                         "Cherry Tomato", "Gooseberry", "Beefsteak Tomato", 
@@ -27,27 +33,29 @@ public class FruitSalad {
            do {
                if (fruit[i].contains("berry")) {
                    fruitSalad[i]= fruit[i];
-               } else if (fruit[i].contains("apple")) {
+                   fruitCounter += 1;
+               } else if (fruit[i].contains("Apple")) {
                    if (appleCounter < 3) {
                        fruitSalad[i] = fruit[i];
                        appleCounter += 1;
-                       fruitCounter +=1;
+                       fruitCounter += 1;
                    }
-               } else if (fruit[i].contains("orange")) {
+               } else if (fruit[i].contains("Orange")) {
                    if (orangeCounter < 2) {
                        fruitSalad[i] = fruit[i];
-                       fruitCounter +=1;
+                       orangeCounter += 1;
+                       fruitCounter += 1;
                    }
-               } else if (!fruit[i].contains("tomato")) {
-                   fruitSalad[i] = fruit[i];
-                   fruitCounter +=1;
-               } else {
+               } else if (!fruit[i].contains("Tomato")) {
                    fruitSalad[i] = fruit[i];
                    fruitCounter += 1;
-               }
-           }while(fruitCounter < 12);
-           System.out.println(Arrays.toString(fruitSalad));
+               } 
+           } while(fruitSalad.length < 12);
        }
+    
         System.out.println("My fruit salad contains " + fruitCounter + "fruits: " + Arrays.toString(fruitSalad));
+        System.out.println(fruitCounter);
+        System.out.println(appleCounter);
+        System.out.println(orangeCounter);
     }
 }

@@ -16,9 +16,7 @@ public class LuckySevens {
         int maxMoney = 0;
         int rolls = 0;
         int maxRoll = 0;
-        int highest = 0;
-        
-        
+
         Scanner userInput = new Scanner(System.in);
         
         System.out.println("How many dollars do you have?");
@@ -34,26 +32,18 @@ public class LuckySevens {
             rolls++;
             if(money > maxMoney) {
                 maxMoney = money;
-                highest = die1 + die2;
                 maxRoll = rolls - 1;
             }
             die1 = randNum.nextInt(6) + 1;
             die2 = randNum.nextInt(6) + 1;
             
-            System.out.println("Roll #"+rolls+". You have $"+money);
-            System.out.println("\nDie 1 rolled a "+die1);
-            System.out.println("Die 2 rolled a "+die2);
-            System.out.println("The total is: "+(die1+die2));
-            
             if (die1 + die2 == 7) {
                 money += 4;
-                System.out.println("You won $4");
             } else {
                 money -= 1;
-                System.out.println("You lost $1");
             }
         }
-        System.out.println("\nYou went broke on Roll "+rolls);
-        System.out.println("\nYou should of quit after "+maxRoll+" rolls. When you had $"+maxMoney);
+        System.out.println("\nYou went broke after "+rolls + " rolls.");
+        System.out.println("\nYou should have quit after "+maxRoll+" rolls when you had $"+maxMoney);
     }
 }
